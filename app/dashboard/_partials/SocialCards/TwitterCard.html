@@ -1,0 +1,20 @@
+<md-card style="width:350px" class="md-whiteframe-z3 twitter-card" ng-repeat="tweet in twitter">
+    
+    <md-card-content>
+        <a href="{{ tweet.Post.Link }}">
+            <h4>{{ tweet.Post.ContentStr }}</h4>
+        </a>
+    </md-card-content>
+
+    <md-card-footer>
+        <h5 style="float:right; display:inline-block">{{tweet.Created | myDate}}</h5>
+        <div class="md-actor">
+            <a href="http://twitter.com/{{ tweet.Actor.Username }}" target="_blank">
+                <img ng-src="{{ tweet.Actor.AvatarPicURL }}" class="md-actor" alt="{{ tweet.Actor.DisplayName }}">
+                <h5>{{ twaeet.Actor.DisplayName }} </h5>
+            </a>
+        </div>
+    </md-card-footer>
+
+</md-card>
+

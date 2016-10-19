@@ -1,0 +1,39 @@
+<md-content >
+	
+		<md-toolbar>
+            <h5 class="md-toolbar-tools">
+		    Tags Watchlist Managment
+		    </h5>
+        </md-toolbar>	
+
+		<div class="md-padding">
+	
+			<div style="display:inline-block" data-ng-repeat="x in keywords track by $index">
+				
+				<md-checkbox class="done-{{ x.toDelete }} md-warn" ng-model="x.toDelete" aria-label="keyword">
+			        {{ x.tag }}
+			    </md-checkbox>
+
+			</div>
+			
+		
+
+			<form data-ng-submit="addKeyword()">
+				
+
+				<md-input-container flex>
+		          <label>Enter New Keyword</label>
+		          <input ng-model="KeywordFieldText">
+		        </md-input-container>
+
+		        <md-button class="md-raised" type="submit">Add Keyword</md-button>
+		        <a class="md-button md-raised md-warn" ng-click="deleteKeywords()">
+		        <span>Delete Selected Tags</span>
+		        <div class="md-ripple-container"></div>
+		        </a>
+			</form>	
+		</div>
+
+
+</md-content>
+

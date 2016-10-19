@@ -1,0 +1,26 @@
+<md-tab id="tab3" label="Google Plus">
+    <md-tab-body class="md-padding">
+        <md-content layout-padding>
+            <div class='md-padding' layout="row" layout-align="center center" layout-wrap flex-gt-sm="90" flex-gt-md="80">
+                    <md-progress-circular ng-show="isSearching" md-mode="indeterminate"></md-progress-circular>
+                    
+                    <md-card style="width:350px" class="md-whiteframe-z3 gplus-card" ng-repeat="gplus in results.gplus">
+                        <md-card-content>
+                            <a href="{{ gplus.Post.Link }}" target="_blank" style="text-decoration: none;"><h3>{{ gplus.Post.Title }}</h3></a>
+                            <div style="margin-bottom: 0px;">{{ gplus.Post.ContentStr| limitTo:100 }}...</div>
+                        </md-card-content>
+                        <md-card-footer>
+                            <h5 style="float:right; display:inline-block">{{gplus.Created | date:"EEE, dd MMM"}}</h5>
+                            <div class="md-actor">
+                                <a href="{{ gplus.Actor.ActorProfileURL }}" target="_blank">
+                                    <img ng-src="{{ gplus.Actor.AvatarPicURL }}" class="md-actor" alt="{{ gplus.Actor.DisplayName }}">
+                                    <h5>{{ gplus.Actor.DisplayName }}</h5>
+                                </a>
+                            </div>
+                        </md-card-footer>
+                    </md-card>
+            </div>
+        </md-content>
+        <md-tab-body/>
+</md-tab>
+

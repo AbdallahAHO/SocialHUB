@@ -1,0 +1,36 @@
+<!-- Search Box -->
+<md-toolbar ng-show="showSearch" class="animate-show md-hue-1 md-whiteframe-z1">
+    <div class="md-toolbar-tools">
+        
+        <md-button class="md-icon-button" ng-click="toggleSearch()" aria-label="Menu">
+            <md-icon md-svg-icon="navigation:ic_arrow_back_24px" aria-label="Back"></md-icon>
+        </md-button>
+        
+        
+        <h3 role="button" ng-click="toggleSearch()">Back</h3>
+        
+        
+        <span flex="5"></span>
+        
+
+        <span ng-controller="DemoCtrl as ctrl" flex>
+
+            <md-input 
+                md-theme="input"
+                md-input-name="searchbox"
+                md-search-text="ctrl.searchText"
+                placeholder="Search">
+
+                <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+                    <div ng-message="required">You <b>must</b> have a favorite state.</div>
+                    <div ng-message="minlength">Your entry is not long enough.</div>
+                    <div ng-message="maxlength">Your entry is too long.</div>
+                </div>
+            </md-input>
+
+        </span>
+
+    </div>
+</md-toolbar>
+<!-- Search Box -->
+

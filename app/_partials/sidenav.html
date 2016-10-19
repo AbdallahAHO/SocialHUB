@@ -1,0 +1,36 @@
+<md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z3" md-is-locked-open="$mdMedia('gt-md')"  md-component-id="left" layout-fill>
+
+    <md-toolbar class="md-hue-2">
+        <span flex></span>
+        <div layout="row" layout-align="center center">
+            <h3 class="md-display-1">Social Hub</h3>
+        </div>
+        <span flex></span>
+    </md-toolbar>
+
+    <md-list>
+
+        <md-list-item class="md-2-line" ng-repeat="item in menu" role="link" md-ink-ripple>
+            <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+            <div class="md-list-item-text">
+                <a href="{{item.link}}">
+                    <span class="md-body-2">{{item.title}}</span>
+                </a>
+            </div>
+        </md-list-item>
+
+        <md-divider></md-divider>
+
+        <md-subheader class="md-no-sticky">Management</md-subheader>
+        <md-list-item class="md-2-line" ng-repeat="item in admin" role="link" md-ink-ripple>
+            <md-icon md-svg-icon="{{item.icon}}" aria-label="{{item.title}}"></md-icon>
+            <div class="md-list-item-text">
+                <a href="{{item.link}}">            
+                    <span class="md-body-2">{{item.title}}</span>
+                </a>    
+            </div>
+        </md-list-item>
+
+    </md-list>
+
+</md-sidenav>

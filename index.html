@@ -1,0 +1,74 @@
+<html lang="en" ng-app="StarterApp">
+
+<head>
+    <link rel="stylesheet" href="css/vendor/angular-material.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+</head>
+
+<body layout="row" ng-controller="ApiHandlerCtrl">
+
+
+    <!-- Side Navigation Menu -->
+    <div layout="vertical" ng-controller="SideNav">
+        <side-nav></side-nav>
+    </div>
+    <!-- Side Navigation Menu -->
+
+
+    <!-- Main Viewport used to load other side menu items, It initially filled with "Dashboard" -->
+    <div ng-controller="TopBar" layout="column" class="relative" layout-fill role="main">
+
+        <!-- Top Bar with search box and responsive sidenav trigger -->
+        
+        <dashboard-searchbar></dashboard-searchbar>
+        <dashboard-topbar></dashboard-topbar>
+
+            
+        <md-content class="animate-show" ng-view flex md-scroll-y> 
+
+        </md-content>
+        <!-- Top Bar with search box and responsive sidenav trigger -->
+
+    </div>
+    <!--Main Viewport end-->
+
+
+    <!-- Angular Material Dependencies -->
+    <script src="js/vendor/angular.js"></script>
+    <script src="js/vendor/angular-animate.js"></script>
+    <script src="js/vendor/angular-aria.js"></script>
+    <script src="js/vendor/angular-route.js"></script>
+    <script src="js/vendor/angular-resource.js"></script>
+    <script src="js/vendor/angular-material.min.js"></script>
+
+
+
+    <!-- Main App Script -->
+    <script src="app/app.js"></script>
+
+
+    <!-- Side Navigation Controller & Directive -->
+    <script src="app/controllers/SidenavCtrl.js"></script>
+    <script src="app/controllers/SettingsCtrl.js"></script>
+
+
+    <!-- Dashboard Header -->
+    <script src="app/dashboard/controllers/HeaderCtrl.js"></script>
+    <script src="app/dashboard/filters/twitterdatefilter.js"></script>
+
+
+    <!-- Dashboard Custom Directives -->
+    <script src="app/dashboard/directives/header-directives.js"></script>
+    <script src="app/dashboard/directives/tabs-directives.js"></script>
+    <script src="app/dashboard/directives/cards-directives.js"></script>
+
+    <!-- Social Media APIs Handler -->
+    <script src="app/dashboard/controllers/APIHandlerCtrl.js"></script>
+
+
+</body>
+
+</html>
+

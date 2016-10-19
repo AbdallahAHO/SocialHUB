@@ -1,0 +1,41 @@
+<md-tab id="tab4" label="Instagram">
+
+    <md-tab-body class="md-padding">
+       
+        <md-content layout-padding>
+
+
+	        <div  class='md-padding' layout="row" layout-align="center center" layout-wrap flex-gt-sm="90" flex-gt-md="80">
+	            <md-progress-circular ng-show="isSearching" md-mode="indeterminate"></md-progress-circular>
+	            
+				<md-card style="width:350px" class="md-whiteframe-z3 instagram-card" ng-repeat="instagram in results.instagram">
+
+				    <a href="{{ instagram.Post.Link }}" target="_blank">
+				        <img ng-src="{{ instagram.Post.PicURL }}" class="md-card-image" alt="{{ instagram.Post.ContentStr }}">
+				    </a>
+
+				    <md-card-content>
+				        <h4 style="margin-bottom: 0px;">{{ instagram.Post.ContentStr | limitTo:140 }}...</h4>
+				    </md-card-content>
+
+				    <md-card-footer>
+				        <h5 style="float:right; display:inline-block">{{instagram.Created | date:"EEE, dd MMM"}}</h5>
+				        <div class="md-actor">
+				            <a href="http://instagram.com/{{ instagram.Actor.Username }}" target="_blank">
+				                <img ng-src="{{ instagram.Actor.AvatarPicURL }}" class="md-actor" alt=" Go to {{ instagram.Actor.DisplayName }} Profile">
+				                <h5>{{ instagram.Actor.DisplayName }}</h5>
+				            </a>
+				        </div>
+				    </md-card-footer>
+				</md-card>
+
+
+
+	        </div>
+
+		</md-content>
+
+    <md-tab-body/>
+
+</md-tab>
+
